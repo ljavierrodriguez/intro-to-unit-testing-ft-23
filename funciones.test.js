@@ -1,4 +1,4 @@
-const { sumar, restar, esMayor } = require('./funciones');
+const { sumar, restar, esMayor, esPar, esInpar, longitudCadena } = require('./funciones');
 
 describe('Validaciones sobre la funcion sumar', () => {
     test('La funcion sumar debe estar definida', () => {
@@ -36,4 +36,26 @@ describe('Validaciones a la funcion esMayor', () => {
     test('Pedro tiene 12 no es mayor de edad debe devolver falso', () => {
         expect(esMayor(12)).toBeFalsy()
     })
+})
+
+
+describe('Validaciones de la funcion esPar', () => {
+
+    test('Validar si 10 es par', () => {
+        expect(esPar(10)).toBeTruthy()
+    })
+
+    test('Validar si 5 es inpar', () => {
+        expect(esInpar(5)).toBeTruthy()
+    })
+
+
+})
+
+test('Devolver la longitud de la palabra "Hola Mundo" que debe ser 10', () => {
+    expect(longitudCadena("Hola Mundo")).toBe(10)
+})
+
+test('Devolver la longitud de la palabra "Canada" que debe ser 6', () => {
+    expect(longitudCadena("123456")).toBe(6)
 })
